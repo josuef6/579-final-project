@@ -19,7 +19,7 @@ function setup(){
 }
 
 function draw(){
-    background(0)
+    background(0, 39, 76)
     stroke(255)
     noFill()
 

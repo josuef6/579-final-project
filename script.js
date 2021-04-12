@@ -59,7 +59,7 @@ var Game = {
     this.running = this.over = false;
     this.turn = this.paddle;
     this.timer = this.round = 0;
-    this.color = "blue";
+    this.color = "#00274C";
 
     Pong.menu();
     Pong.listen();
