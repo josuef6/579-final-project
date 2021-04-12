@@ -1,3 +1,5 @@
+// npm install - g live - server
+// live - server
 var song
 var fft
 var particles = []
@@ -5,8 +7,13 @@ function preload(){
     song = loadSound('music/HotlineBling.m4a');
 
 }
+function windowResized(){
+    resizeCanvas(windowWidth, windowHeight);
+}
 function setup(){
-    createCanvas(windowWidth, windowHeight)
+    var myCanvas = createCanvas(windowWidth, windowHeight)
+    myCanvas.position(0,0);
+    myCanvas.style('z-index', '-1');
     angleMode(DEGREES)
     fft = new p5.FFT()
 }
