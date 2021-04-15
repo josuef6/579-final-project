@@ -6,6 +6,7 @@ html {
     display: table;
     margin: auto;
 }
+/* Centers canvas in project.html to page to layer pong game over song visualizer*/
 body {
   text-align: center;
   background-color: grey;
@@ -14,8 +15,9 @@ body {
   display: table-cell;
   vertical-align: middle;
 }
-#stack{
+/* Helps to blend "pong" canvas with song visualizer and adds border to see games' walls */
+#pong{
+  opacity: 0.6;
   border-style: solid;
   border-color: white;
-  opacity: 0.6;
 }
