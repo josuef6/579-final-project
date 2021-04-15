@@ -1,0 +1,8 @@
+Some of the sounds in this project were pulled from OpenGameArt.org.
+We would like to give credit to the sound creators as well:
+
+"GUI_Sound Effects_031.mp3" created by Jesús Lastra
+"GUI_Sound Effects_033.mp3" created by Jesús Lastra
+"GUI_Sound Effects_040.mp3" created by Jesús Lastra
+"Orbit.mp3" created by Lordomi
+"MESSAGE-B_Accept.wav" created by David McKee (ViRiX)
