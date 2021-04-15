@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
+        <!--
+        To run locally run following commands in terminal (make sure you have all the files):
+        npm install - g live - server
+        live - server
+        -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
@@ -16,22 +17,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.js"
             integrity="sha512-KxzVm+IqxNNq0+SzT/zzd5PHxY4LPrN+v5gZJ6+JKqjeU3Cr4y/djAg5eNlKDWurn1SeKZpql/yeOMWblMSzOg=="
             crossorigin="anonymous"></script>
-        <script src="project.js"></script>
-
+        <script src="visualizer.js"></script>
         <link rel="stylesheet" href="style.css">
-
     </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <!-- <script src="" async defer></script> -->
-    </body>
-    <!-- <div id='stack'>
-
-    </div> -->
-    <canvas id = 'stack'></canvas>
-    <script src="script.js" async defer></script>
-    <!-- <script src="project.js" async defer></script> -->
+    <body></body>
+    <canvas id = 'pong'></canvas>
+    <script src="pong.js" async defer></script>
 </html>

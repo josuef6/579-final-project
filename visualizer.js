@@ -1,62 +1,64 @@
+// To run locally run following commands in terminal (make sure you have all the files):
 // npm install - g live - server
 // live - server
-var song
-var fft
-var particles = []
+
+// Initialize variables for song and FFT (Fast Fourier Transform)
+let song
+let fft
+let stars = []
 function preload(){
-    song = loadSound('music/HotlineBling.m4a');
+    song = loadSound('music/Orbit.mp3');
 
 }
+// Creates Canvas for visualizer
 function windowResized(){
     resizeCanvas(windowWidth, windowHeight);
 }
+// Sets positioning for visualizer
 function setup(){
-    var myCanvas = createCanvas(windowWidth, windowHeight)
+    let myCanvas = createCanvas(windowWidth, windowHeight)
     myCanvas.position(0,0);
     myCanvas.style('z-index', '-1');
     angleMode(DEGREES)
     fft = new p5.FFT()
 }
-
+// Draws visualizer on the screen
 function draw(){
     background(0, 39, 76)
     stroke(255)
     noFill()
-
     translate(width / 2, height / 2);
 
+    // Transforms sound into frequencies
     fft.analyze()
     amp = fft.getEnergy(20, 200)
-    var wave = fft.waveform()
+    let wave = fft.waveform()
 
-    for(var t = -1; t <=1; t +=2){
-
+    for(let t = -1; t <=1; t +=2){
         beginShape()
-        for (var i = 0; i <= 180; i+= .5) {
-            var index = floor(map(i, 0, 180, 0, wave.length - 1))
+        for (let i = 0; i <= 180; i+= .5) {
+            let index = floor(map(i, 0, 180, 0, wave.length - 1))
 
-            var r = map(wave[index], -1, 1, 150, 350)
-            var x = r * sin(i) * t
-            var y = r * cos(i)
+            let r = map(wave[index], -1, 1, 150, 350)
+            let x = r * sin(i) * t
+            let y = r * cos(i)
             vertex(x, y)
         }
         endShape()
     }
 
-    var p = new Particle()
-    particles.push(p)
+    let s = new Star()
+    stars.push(s)
 
-    for (var i = particles.length - 1; i >= 0; i--) {
-        if(!particles[i].edges()){
-            particles[i].update(amp > 240)
-            particles[i].show()
+    for (let i = stars.length - 1; i >= 0; i--) {
+        if(!stars[i].edges()){
+            stars[i].update(amp > 200)
+            stars[i].show()
         }
         else{
-            particles.splice(i, 1)
+            stars.splice(i, 1)
         }
-
     }
-
 }
 
 function mouseClicked(){
@@ -69,8 +71,8 @@ function mouseClicked(){
         loop()
     }
 }
-
-class Particle{
+// Star particles that react to song for the visualizer
+class Star {
     constructor(){
         this.pos = p5.Vector.random2D().mult(250)
         this.vel = createVector(0,0)
