@@ -52,7 +52,7 @@ function draw(){
 
     for (let i = stars.length - 1; i >= 0; i--) {
         if(!stars[i].edges()){
-            stars[i].update(amp > 200)
+            stars[i].update(amp > 100)
             stars[i].show()
         }
         else{
